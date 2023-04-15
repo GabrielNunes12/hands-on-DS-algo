@@ -19,8 +19,9 @@ public class TaskStorage {
   public void addToTaskList(Task task) {
     if(hasTask(task)) {
       tasks.add(task);
+    } else {
+      throw new RuntimeException("Task does not have an ID");
     }
-    throw new RuntimeException("Task does not have an ID");
   }
 
   private boolean hasTask(Task task) {
