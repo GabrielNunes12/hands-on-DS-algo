@@ -20,6 +20,50 @@ public class Task {
     return id;
   }
 
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public Instant getDueDate() {
+    return dueDate;
+  }
+
+  public void setDueDate(Instant dueDate) {
+    this.dueDate = dueDate;
+  }
+
+  public EnumPriority getEnumPriority() {
+    return enumPriority;
+  }
+
+  public void setEnumPriority(EnumPriority enumPriority) {
+    this.enumPriority = enumPriority;
+  }
+
+  public EnumStatus getEnumStatus() {
+    return enumStatus;
+  }
+
+  public void setEnumStatus(EnumStatus enumStatus) {
+    this.enumStatus = enumStatus;
+  }
+
   public Task(Long id, String title, String description, Instant dueDate, EnumPriority enumPriority, EnumStatus enumStatus) {
     this.id = id;
     this.title = title;
