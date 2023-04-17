@@ -8,6 +8,7 @@ import Enums.EnumStatus;
 import Intefaces.TaskCommand;
 import Models.Task;
 import Models.TaskStorage;
+import Models.TextBasedUI;
 
 import java.time.Instant;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
 public class Main {
   public static void main(String[] args) {
     TaskStorage taskStorage = TaskStorage.getInstance();
+    TextBasedUI textBasedUI = new TextBasedUI(taskStorage);
     Task task = new Task.Builder()
             .id(1L)
             .title("Example Task")
@@ -35,6 +37,7 @@ public class Main {
     Task updatedTask = new Task.Builder(1L, "Updated task 1",  "Updated task 1",Instant.now(), EnumPriority.LOW, EnumStatus.PENDING).build();
     TaskCommand updateTask = new UpdateTaskCommand(updatedTask, 1L);
     updateTask.execute();
+    textBasedUI.update();
     System.out.println("Update task" + updateTask);
   }
 }
